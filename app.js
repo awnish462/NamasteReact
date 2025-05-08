@@ -1,8 +1,5 @@
-// const heading=React.createElement("h1",{},"Hi i'm h1 tag");
-// const root=ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-
-//Nested html structure
+import React from "react";
+import ReactDOM from "react-dom/client"
 
 const parent = React.createElement(
   "div",
@@ -19,6 +16,7 @@ const parent = React.createElement(
 
 );
 console.log(parent);
+console.dir("parent:- "+ parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(root)
 root.render(parent);

@@ -1,0 +1,23 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is namaste react course tutorial",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awnish462/NamasteReact.git"
+  },
+  "author": "Awnish Sinha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awnish462/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/awnish462/NamasteReact#readme",
+  "dependencies": {
+    "parcel": "^2.14.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
