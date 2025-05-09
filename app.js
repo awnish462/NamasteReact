@@ -42,22 +42,22 @@ const Heading = () => {
   );
 };
 
-const ResCard = () => {
+const ResCard = (props) => {
   return (
     <div className="res-card">
       <div className="res-card-img-container">
         <img
           className="res-card-img"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/3/26/1da56fba-dd6e-4122-9c23-1a05c5bc9123_1067752.jpg"
+          src={props.resCardImg}
         />
         <div className="res-card-heading">
-          <h2>Milanee's Kitchen</h2>
+          <h2>{props.resCardHeading}</h2>
         </div>
         <div className="res-card-rating">
-          <span>⭐ 4.3 • 50-55 mins</span>
+          <span>{props.resCardRating}</span>
         </div>
         <div className="res-card-key">
-          <p> Biryani, North Indian, Pastas, Punjabi, Desserts Bistupur</p>
+          <p> {props.resCardKey}</p>
         </div>
       </div>
     </div>
@@ -68,7 +68,12 @@ const Body = () => {
   return (
     <div className="body">
       <div className="res-container">
-        <ResCard />
+        <ResCard
+          resCardHeading="Milanee's Kitchen"
+          resCardImg="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/3/26/1da56fba-dd6e-4122-9c23-1a05c5bc9123_1067752.jpg"
+          resCardRating="⭐ 4.3 • 50-55 mins"
+          resCardKey="Biryani, North Indian, Pastas, Punjabi, Desserts Bistupur"
+        />
         <ResCard />
         <ResCard />
         <ResCard />
