@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Heading from "./src/Heading";
-import Body from "./src/Body";
+import Heading from "./src/Components/Heading";
+import Body from "./src/Components/Body";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import About from "./src/About";
-import Contact from "./src/Contact";
-import Error from "./src/Error";
+import About from "./src/Components/About";
+import Contact from "./src/Components/Contact";
+import Error from "./src/Components/Error";
 
 const AppContainer = () => {
   return (

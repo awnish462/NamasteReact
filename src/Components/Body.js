@@ -1,5 +1,6 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
+import Shrimmer from "./Shrimmer";
 
 const Body = () => {
   let [resListData, setResList] = useState([]);
@@ -15,7 +16,9 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await dataFetched.json();
-    console.log( json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+    console.log(
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
 
     setResList(
       json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
@@ -24,6 +27,12 @@ const Body = () => {
       json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
   }
+
+  if (resListData.length === 0) {
+    console.log("Insise shrimmer");
+    return <Shrimmer />;
+  }
+
   return (
     <div className="body">
       <div className="search">
@@ -40,9 +49,7 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             filteredData = resListData.filter((res) =>
-              res.info.name
-                .toLowerCase()
-                .includes(searchText.toLowerCase())
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setFilteredData(filteredData);
           }}

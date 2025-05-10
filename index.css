@@ -82,3 +82,16 @@
 .btn-login{
   padding: 5px;
 }
+
+.shrimmer-container{
+ display: grid;
+ grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+}
+
+.shrimmer-card{
+    height: 300px;
+  width: 230px;
+  margin: 5px;
+  background-color: rgb(249, 245, 245);
+  border-radius: 10px;
+}
