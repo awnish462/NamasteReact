@@ -11,8 +11,14 @@
   list-style-type: none;
 }
 
-.nav-item li {
+.nav-item li  {
   margin: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  
+}
+.nav-item a{
+  text-decoration:none;
 }
 
 .logo-img {
@@ -45,6 +51,7 @@
   margin: 5px;
   background-color: rgb(249, 245, 245);
   border-radius: 10px;
+  cursor: pointer;
 }
 .res-card:hover {
   border: 1px solid black;
@@ -81,7 +88,9 @@
 }
 .btn-login{
   padding: 5px;
+  cursor: pointer;
 }
+
 
 .shrimmer-container{
  display: grid;
