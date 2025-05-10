@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./src/Heading";
-import Body from "./src/body";
+import Body from "./src/Body";
 
 const AppContainer = () => {
   return (

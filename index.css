@@ -20,11 +20,16 @@
 }
 
 .search {
+  display: flex;
   margin: 20px;
 }
 
 .search > input {
   border-radius: 10px;
+}
+.search-btn{
+  padding: 5px;
+  margin-left: 5px;
 }
 
 .body {
