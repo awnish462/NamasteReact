@@ -7,6 +7,7 @@ import About from "./src/Components/About";
 import Contact from "./src/Components/Contact";
 import Error from "./src/Components/Error";
 import Menu from "./src/Components/Menu";
+import Profile from "./src/Components/ProfileClass";
 
 const AppContainer = () => {
   return (
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/menu/:resName/:resId",
         element:<Menu/>
+      },
+      {
+        path:"/profile",
+        element:<Profile/>
       }
     ],
   },

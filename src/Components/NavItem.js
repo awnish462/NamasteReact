@@ -15,7 +15,7 @@ const NavItem = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>Profile</li>
+        <li><Link to="/profile">Profile</Link></li>
       </ul>
       <div className="btn-container">
         <button
