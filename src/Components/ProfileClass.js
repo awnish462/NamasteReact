@@ -3,7 +3,7 @@ import User from "./UserClass";
 
 class Profile extends React.Component {
   constructor() {
-    super()
+    super();
     console.log("Parent constructor");
   }
 
