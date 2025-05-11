@@ -4,7 +4,7 @@ import User from "./UserClass";
 class Profile extends React.Component {
   render() {
     return(
-        <User/>
+        <User name="awnish" area="Aurangabad" work="software developer"/>
     )
   }
 }

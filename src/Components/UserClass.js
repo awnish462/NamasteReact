@@ -1,11 +1,16 @@
 import React from "react";
 
 class User extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
   render() {
     return (
       <div className="user-container">
-        <h1>Name - Awnish</h1>
-        <h2>Area-Aurngabad</h2>
+        <h1>{this.props.name}</h1>
+        <h2>{this.props.area}</h2>
+        <h2>{this.props.work}</h2>
       </div>
     );
   }
