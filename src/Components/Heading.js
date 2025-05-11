@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import NavItem from "./NavIten";
+import NavItem from "./NavItem";
 const Heading = () => {
   return (
     <div className="heading">

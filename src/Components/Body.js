@@ -1,6 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shrimmer from "./Shrimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   let [resListData, setResList] = useState([]);
@@ -72,7 +73,9 @@ const Body = () => {
 
       <div className="res-container">
         {filteredData.map((resturant) => (
-          <ResCard key={resturant.info.id} resData={resturant} />
+          <Link to={"/menu/" +resturant.info.name +"/"+ resturant.info.id} key={resturant.info.id} >
+            <ResCard key={resturant.info.id} resData={resturant} />
+          </Link>
         ))}
       </div>
     </div>
