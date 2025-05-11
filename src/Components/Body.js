@@ -2,31 +2,21 @@ import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shrimmer from "./Shrimmer";
 import { Link } from "react-router";
-import{ RES_URL} from"../../utils/constants";
+import { RES_URL } from "../../utils/constants";
+import useRestaurantData from "../../utils/useRestaurantData";
 
 const Body = () => {
-  const [resListData, setResList] = useState([]);
+  let resListData =  useRestaurantData();
+  console.log("reslistdata:- ", resListData)
   const [searchText, setSearchText] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  let [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    fetchedData();
-  }, []);
+    setFilteredData(resListData);
+    console.log("useeffect")
+  },[resListData]);
 
-  async function fetchedData() {
-    const dataFetched = await fetch(RES_URL);
-    const json = await dataFetched.json();
-    console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-
-    setResList(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-    setFilteredData(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    );
-  }
+  
 
   if (resListData.length === 0) {
     console.log("Insise shrimmer");
@@ -36,6 +26,8 @@ const Body = () => {
   return (
     <div className="body">
       <div className="search">
+        {console.log("render")}
+        {console.log("filtered data:- ",filteredData)}
         <input
           type="text"
           className="search-bar"
@@ -72,7 +64,10 @@ const Body = () => {
 
       <div className="res-container">
         {filteredData.map((resturant) => (
-          <Link to={"/menu/" +resturant.info.name +"/"+ resturant.info.id} key={resturant.info.id} >
+          <Link
+            to={"/menu/" + resturant.info.name + "/" + resturant.info.id}
+            key={resturant.info.id}
+          >
             <ResCard key={resturant.info.id} resData={resturant} />
           </Link>
         ))}
