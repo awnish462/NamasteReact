@@ -4,11 +4,19 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: 0
     };
+    console.log(this.props.name+ " constructor");
+  }
+
+  //mainly used for api operation
+  //it runs after render()
+  componentDidMount(){
+    console.log(this.props.name+ " componentDidMount")
   }
 
   render() {
+    console.log(this.props.name+ " render")
     return (
       <div className="user-container">
         <h1>{this.props.name}</h1>
