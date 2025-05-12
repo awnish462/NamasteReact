@@ -21,6 +21,7 @@ const NavItem = () => {
         <li>
           <Link to="/profile">Profile</Link>
         </li>
+        <li><Link to="/grocery">Grocery</Link></li>
       </ul>
       <div className="btn-container">
         <button

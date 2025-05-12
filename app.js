@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./src/Components/Heading";
 import Body from "./src/Components/Body";
@@ -8,6 +8,9 @@ import Contact from "./src/Components/Contact";
 import Error from "./src/Components/Error";
 import Menu from "./src/Components/Menu";
 import Profile from "./src/Components/ProfileClass";
+import Shrimmer from"./src/Components/Shrimmer";
+
+const Grocery = lazy(() => import("./src/Components/Grocery"));
 
 const AppContainer = () => {
   return (
@@ -25,8 +28,8 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/about",
@@ -37,13 +40,21 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path:"/menu/:resName/:resId",
-        element:<Menu/>
+        path: "/menu/:resName/:resId",
+        element: <Menu />,
       },
       {
-        path:"/profile",
-        element:<Profile/>
-      }
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<Shrimmer/>}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
