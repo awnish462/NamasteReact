@@ -5,20 +5,20 @@ const ResCard = (props) => {
 
   const{name,avgRating,cuisines,cloudinaryImageId}=props.resData.info;
   return (
-    <div className="res-card">
-      <div className="res-card-img-container">
-        <img className="res-card-img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} />
-        <div className="res-card-heading">
-          <h2>{name}</h2>
+    <div className="bg-gray-100 mx-2 mb-2 rounded-md ">
+      {/* <div className=""> */}
+        <img className="rounded-2xl h-60" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} />
+        <div className="font-bold font-mono ml-2 ">
+          <h2 className="whitespace-nowrap overflow-hidden text-ellipsis pb-1">{name}</h2>
         </div>
-        <div className="res-card-rating">
+        <div className="ml-2">
           <span>{avgRating}</span>
         </div>
-        <div className="res-card-key">
-          <p> {cuisines}</p>
+        <div className="mx-2 ">
+          <p className="whitespace-nowrap overflow-hidden text-ellipsis pb-1"> {cuisines.join(",")}</p>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

@@ -23,13 +23,13 @@ const Body = () => {
   }
 
   return (
-    <div className="body">
-      <div className="search">
+    <div className="mt-14">
+      <div className="">
         {console.log("render")}
         {console.log("filtered data:- ",filteredData)}
         <input
           type="text"
-          className="search-bar"
+          className="bg-slate-300 rounded mx-3" 
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -37,7 +37,7 @@ const Body = () => {
         />
         <button
           type="search"
-          className="search-btn"
+          className="border-cyan-200 bg-green-400 rounded-md px-2 py-1 "
           onClick={() => {
             filteredData = resListData.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -48,7 +48,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="search-btn"
+          className="border-cyan-200 bg-green-400 rounded-md px-2 py-1 mx-2"
           onClick={() => {
             const filteredList = resListData.filter(
               (res) => res.info.avgRating > 4.3
@@ -61,7 +61,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="mt-2 grid grid-cols-6">
         {filteredData.map((resturant) => (
           <Link
             to={"/menu/" + resturant.info.name + "/" + resturant.info.id}

@@ -6,8 +6,8 @@ const Menu = () => {
   const menuList = useMenuData(resId);
 
   return (
-    <div className="menu-container">
-      <h1>{resName}</h1>
+    <div className="m-16">
+      <h1 className="font-bold">{"Restaurant Name:-  "+resName}</h1>
       {menuList?.map((menu) => (
         <p key={menu?.card?.info?.id}>
           {menu?.card?.info?.name}-
