@@ -1,5 +1,3 @@
-import { MENU_URL } from "../../utils/constants";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useMenuData from "../../utils/useMenuData";
 
