@@ -1,7 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shrimmer from "./Shrimmer";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import useRestaurantData from "../../utils/useRestaurantData";
 
 const Body = () => {
