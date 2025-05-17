@@ -12,6 +12,7 @@ const Body = () => {
   console.log("reslistdata:- ", resListData);
   const [searchText, setSearchText] = useState([]);
   let [filteredData, setFilteredData] = useState([]);
+  const [openAccordion,setOpenAccordion] =useState(false);
 
   useEffect(() => {
     setFilteredData(resListData);
@@ -22,6 +23,8 @@ const Body = () => {
     console.log("Insise shrimmer");
     return <Shrimmer />;
   }
+
+
 
   return (
     <div className="mt-14">
@@ -63,10 +66,10 @@ const Body = () => {
       </div>
 
       <div className="mt-2 grid grid-cols-6">
-        {filteredData.map((resturant) => (
+        {filteredData.map((resturant,index) => (
           <Link
             to={"/menu/" + resturant.info.name + "/" + resturant.info.id}
-            key={resturant.info.id}
+            key={resturant.info.id} 
           >
             {resturant.info.avgRating > 4.3 ? (
               <ResCardPromoted key={resturant.info.id} resData={resturant} />
