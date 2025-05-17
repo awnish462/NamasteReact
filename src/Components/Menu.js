@@ -1,13 +1,13 @@
 import { useParams } from "react-router";
 import useMenuData from "../../utils/useMenuData";
-import { MENU_IMG_URL } from "../../utils/constants";
 import { useState } from "react";
 import ResturantCategories from "./RestaurantCategories";
 
 const Menu = () => {
   const { resId, resName } = useParams();
   const menuList = useMenuData(resId);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showIndex, setShowIndex] = useState(0);
+  const[openedIndex,setOpenedIndex]=useState(null);
 
   return (
     <div className="m-16">
@@ -15,7 +15,16 @@ const Menu = () => {
 
       {menuList.map((item, index) => {
         if (index > 1) {
-          return <ResturantCategories item={item} key={index} />;
+          return (
+            <div key={item?.card?.card?.title|| index}>
+              <ResturantCategories
+                item={item}
+                showMenu={index === showIndex ? true : false  }
+                
+                setShowItemList={() => setShowIndex(index)}
+              />
+            </div>
+          );
         }
       })}
     </div>
@@ -23,4 +32,3 @@ const Menu = () => {
 };
 
 export default Menu;
-// import { useParams } from "react-router";
