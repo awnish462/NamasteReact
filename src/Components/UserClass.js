@@ -1,5 +1,5 @@
 import React from "react";
-
+import UserContext from "../../utils/usercontext"
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -35,8 +35,11 @@ class User extends React.Component {
     console.log(this.props.name + " render");
     const { name, avatar_url } = this.state.user;
     return (
-      <div className="user-container">
+      <div className="user-container pt-10 px-2">
         <h1>{name}</h1>
+        <UserContext.Consumer>
+          {(data)=><h3>{data.userName}</h3>}
+        </UserContext.Consumer>
         <img src={avatar_url} />
         <button
           onClick={() => {
